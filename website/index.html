@@ -1,7 +1,7 @@
 <script>
     const grabIp = async() =>{
         var ip;
-        const isLocal = true;
+        const isLocal = false;
         await fetch('https://api.ipify.org/?format=json')
         .then((response) => response.json())
         .then(data =>{ 
