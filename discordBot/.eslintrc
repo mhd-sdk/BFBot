@@ -1,0 +1,22 @@
+{
+  "env": {
+    "es2020": true,
+    "node": true
+  },
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": ["@grafana/eslint-config"],
+  "plugins": ["prettier", "@typescript-eslint"],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}

